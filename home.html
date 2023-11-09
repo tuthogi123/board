@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Background color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            margin: 0;
+        }
+        .content {
+            flex: 1; /* Allow content to take up remaining vertical space */
+        }
+        .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+        .menu-toggle {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            background-color: #333; /* Hamburger button background color */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+       
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        .menu-item-right {
+            text-align: right;
+        }
+
+        .links-container {
+            flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+
+    padding: 10px;
+  
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+.links-container a {
+    text-decoration: none;
+    text-emphasis-color: black;
+    /* color: blue; Change this to the desired text color */
+ 
+    color:blue ;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 50px solid; /* Set a large border around the links */
+    border-radius: 0;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Add margin between links to separate them vertically */
+}
+
+
+/* .links-container a:not(:last-child) {
+    margin-bottom: 100px; /* Increase margin between links to create separation */
+ 
+    .link1 {
+    /* background: url('images/image.jpg') no-repeat center center; */
+    background-size: cover;
+}
+.clear {
+    clear: both;
+}
+
+
+.trending-section {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trending-category {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .trending-list {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .trending-item {
+            width: 200px;
+            height: 150px;
+            background-size: cover;
+            margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .events {
+            background-image: url('events.jpg'); /* Add your events background image URL here */
+        }
+
+        .sports {
+            background-image: url('sports.jpg'); /* Add your sports background image URL here */
+        }
+
+        .jobs {
+            background-image: url('jobs.jpg'); /* Add your jobs background image URL here */
+        }
+        .trending-item {
+    width: 200px;
+    height: 200px; /* Adjust the height based on your design */
+    background-size: cover;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.trending-item img {
+    width: 100px; /* Set the width of the images */
+    height: 100px; /* Set the height of the images */
+    object-fit: cover; /* Ensure the images cover the specified dimensions */
+    border-radius: 50%; /* Make the images circular (optional) */
+    margin-bottom: 10px; /* Add spacing between the image and text */
+}
+
+.trending-item-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</div>
+
+    <div class="menu">
+        <!-- <div class="menu-item">Campx</div>
+        <div class="menu-item">Fixer</div>
+        <div class="menu-item">studx</div>
+        <div class="menu-item">Contact</div> -->
+        <div class="menu-item menu-item-right">Account Settings</div>
+        <div class="menu-item menu-item-right">Account</div>
+    </div>
+
+    <body>
+        <div class="links-container">
+            <a class="link1" href="index.html">Campx</a>
+            <a class="link2" href="#">Fixer</a>
+            <a class="link3" href="#">Studx</a>
+            <a class="link4" href="#">Contact  </a>
+            <a class="link5" href="#">Rental</a><br>
+            <a class="link6" href="#">Uncleeeas</a>
+        </div>
+    
+        <div class="footer">
+            <h1>Trending</h1>
+            <div class="trending-list">
+                <div class="trending-item events">
+                    <img src="images/image1.jpg" alt="Events Image">
+                    <div class="trending-item-text">Events</div>
+                </div>
+                <div class="trending-item sports">
+                    <img src="images/image2.jpg" alt="Sports Image">
+                    <div class="trending-item-text">Sports</div>
+                </div>
+                <div class="trending-item jobs">
+                    <img src="images/image3.jpg" alt="Jobs Image">
+                    <div class="trending-item-text">Jobs</div>
+                </div>
+            </div>
+        </div>
+       
+    
+        <!-- Rest of your HTML content and scripts -->
+    </body>
+
+    <script>
+         function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+
+</html>
