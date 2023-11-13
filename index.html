@@ -63,9 +63,7 @@
     position: fixed;
     top: 100px;
     left: 20px;
-
     padding: 10px;
-  
     z-index: 1;
     width: 200px;
     text-align: left;
@@ -73,17 +71,136 @@
 
 .links-container a {
     text-decoration: none;
-    color: blue; /* Change this to the desired text color */
+    color: blue;
     display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    border: 50px solid; /* Set a large border around the links */
+    border: 50px solid;
     border-radius: 0;
     margin-right: 10px;
-    margin-bottom: 10px; /* Add margin between links to separate them vertically */
+    margin-bottom: 10px;
 }
 
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Define your styles for the parties section */
+        .party-container {
+            padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 160px;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    clear: both;
+        }
+
+        .party-item {
+            width: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 10px 20px 10px;
+    text-align: center;
+        }
+
+        .party-item img {
+            width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+        }
+
+        .party-details {
+            font-size: 16px;
+        }
+       
+
+/* ... other styles ...
+
+
+.links-container {
+    flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
+
+.links-container a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 50px solid;
+    border-radius: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.party-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    top: 160px;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    clear: both;
+}
+
+.party-item {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 10px 20px 10px;
+    text-align: center;
+}
+
+.party-item img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.party-details {
+    font-size: 16px;
+}
+
+/* ... other styles ... */
+
+
+
+
+
+
+.links-container {
+    flex-wrap: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 10px;
+    z-index: 1;
+    width: 200px;
+    text-align: left;
+}
 
 /* .links-container a:not(:last-child) {
     margin-bottom: 100px; /* Increase margin between links to create separation */
@@ -102,25 +219,52 @@
 </head>
 
 <body>
-    <!-- <div class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</div>
-
-    <div class="menu">
-        <!-- <div class="menu-item">Campx</div>
-        <div class="menu-item">Fixer</div>
-        <div class="menu-item">studx</div>
-        <div class="menu-item">Contact</div> -->
-        <!-- <div class="menu-item menu-item-right">Account Settings</div>
-        <div class="menu-item menu-item-right">Account</div>
-    </div> --> -->
 
     <div class="links-container">
-        <a class="link1" href="">partys</a>
-        <a class="link2" href="#">BootCamp</a>
+        <a class="link1" href="parties.html">partys</a>
+        <a class="link2" href="bootcamp.html">BootCamp</a>
         <a class="link3" href="#">vacation package</a>
         <a class="link4" href="#">Concert Event  </a>
        
     </div>
-    <div class="clear"></div>
+    <div class="party-container">
+        <div class="party-item">
+            <img src="images/image6.jpg" alt="Party 1">
+            <div class="party-details">
+                <p>Date: January 15, 2023</p>
+                <p>Time: 8:00 PM</p>
+                <p>Venue: Party Venue 1</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image7.jpg" alt="Party 2">
+            <div class="party-details">
+                <p>Date: February 10, 2023</p>
+                <p>Time: 7:30 PM</p>
+                <p>Venue: Party Venue 2</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image8.jpg" alt="Party 3">
+            <div class="party-details">
+                <p>Date: March 20, 2023</p>
+                <p>Time: 9:00 PM</p>
+                <p>Venue: Party Venue 3</p>
+            </div>
+        </div>
+
+        <div class="party-item">
+            <img src="images/image9.jpg" alt="Party 4">
+            <div class="party-details">
+                <p>Date: March 22, 2023</p>
+                <p>Time: 9:30 PM</p>
+                <p>Venue: Party Venue 4</p>
+            </div>
+        </div>
+        <!-- Add more party items as needed -->
+    </div>
 
     <script>
          function toggleMenu() {
