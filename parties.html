@@ -39,48 +39,94 @@
         .party-details {
             font-size: 16px;
         }
+
+        /* Add a style for the clickable link */
+        .party-link {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Style for the party details container */
+        #party-details-container {
+            display: none;
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="party-container">
+    <div class="party-container" id="party-container">
+        <!-- Wrap each party item in a clickable link -->
         <div class="party-item">
-            <img src="images/image6.jpg" alt="Party 1">
-            <div class="party-details">
-                <p>Date: January 15, 2023</p>
-                <p>Time: 8:00 PM</p>
-                <p>Venue: Party Venue 1</p>
-            </div>
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(1)">
+                <img src="images/image6.jpg" alt="Party 1">
+                <div class="party-details">
+                    <h1>paty 1</h1>
+                </div>
+            </a>
         </div>
 
         <div class="party-item">
-            <img src="images/image7.jpg" alt="Party 2">
-            <div class="party-details">
-                <p>Date: February 10, 2023</p>
-                <p>Time: 7:30 PM</p>
-                <p>Venue: Party Venue 2</p>
-            </div>
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(2)">
+                <img src="images/image7.jpg" alt="Party 2">
+                <div class="party-details">
+                   <h1> party 2</h1>
+                </div>
+            </a>
         </div>
 
         <div class="party-item">
-            <img src="images/image8.jpg" alt="Party 3">
-            <div class="party-details">
-                <p>Date: March 20, 2023</p>
-                <p>Time: 9:00 PM</p>
-                <p>Venue: Party Venue 3</p>
-            </div>
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(3)">
+                <img src="images/image8.jpg" alt="Party 3">
+                <div class="party-details">
+                   <h1> party 3</h1>
+                </div>
+            </a>
         </div>
 
         <div class="party-item">
-            <img src="images/image9.jpg" alt="Party 4">
-            <div class="party-details">
-                <p>Date: March 22, 2023</p>
-                <p>Time: 9:30 PM</p>
-                <p>Venue: Party Venue 4</p>
-            </div>
+            <a href="party1.html" class="party-link" onclick="showPartyDetails(4)">
+                <img src="images/image9.jpg" alt="Party 4">
+                <div class="party-details">
+                    <h1>party 4</h1>
+                </div>
+            </a>
         </div>
         <!-- Add more party items as needed -->
     </div>
+
+    <!-- Party Details Container -->
+    <div id="party-details-container">
+        <h2 id="party-name"></h2>
+        <p id="party-date"></p>
+        <p id="party-time"></p>
+        <p id="party-venue"></p>
+    </div>
+
+    <script>
+        function showPartyDetails(partyNumber) {
+            // Define party details
+            const partyDetails = [
+                { name: "Party 1", date: "January 15, 2023", time: "8:00 PM", venue: "Party Venue 1" },
+                { name: "Party 2", date: "February 10, 2023", time: "7:30 PM", venue: "Party Venue 2" },
+                { name: "Party 3", date: "March 20, 2023", time: "9:00 PM", venue: "Party Venue 3" },
+                { name: "Party 4", date: "March 22, 2023", time: "9:30 PM", venue: "Party Venue 4" }
+            ];
+
+            // Get the selected party details
+            const selectedParty = partyDetails[partyNumber - 1];
+
+            // Update the party details container
+            document.getElementById("party-name").innerText = selectedParty.name;
+            document.getElementById("party-date").innerText = "Date: " + selectedParty.date;
+            document.getElementById("party-time").innerText = "Time: " + selectedParty.time;
+            document.getElementById("party-venue").innerText = "Venue: " + selectedParty.venue;
+
+            // Show the party details container
+            document.getElementById("party-details-container").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

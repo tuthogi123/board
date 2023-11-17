@@ -83,6 +83,24 @@
             opacity: 0;
             cursor: pointer;
         }
+        .links-container {
+            display: none;
+            justify-content: space-between; /* Align links horizontally with space between them */
+            border-top: 20px solid #ccc; /* Add top border */
+            padding: 10px 0; /* Add padding for better visual */
+            margin-top: 20px;
+            flex-direction:row ;
+        }
+
+        .links-container a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px; /* Add padding around each link */
+            border: 1px solid #ccc; /* Add border around each link */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
        
     </style>
 </head>
@@ -111,21 +129,28 @@
     </div>
 
 
-    <div class="profile-container" id="profilePage">
+    <div class="profile-container" id="profilePage" style="display: none;">
         <h2>Welcome to your profile</h2>
-        <!-- Display the user's name dynamically -->
         <div class="profile-section" id="profileNameSection">
             <p>Name: John Doe</p>
         </div>
-        <!-- Display profile picture with upload option -->
         <div class="profile-section">
             <div id="profilePictureContainer">
                 <img id="profilePicture" src="icon_placeholder.png" alt="Profile Picture">
                 <input type="file" id="profilePictureInput" accept="image/*" onchange="displayProfilePicture()">
             </div>
         </div>
-    </div>
 
+        <!-- Display link container after registration -->
+        <div class="links-container" id="linkContainer" style="display: none;">
+            <a class="link1" href="campx.html">Campx</a>
+            <a class="link2" href="#">Fixer</a>
+            <a class="link3" href="#">Studx</a>
+            <a class="link4" href="#">Contact  </a>
+            <a class="link5" href="#">Rental</a>
+            <a class="link6" href="#">Uncleeeas</a>
+        </div>
+    </div>
     <script>
         function showRegistration() {
             document.getElementById('loginForm').style.display = 'none';
@@ -160,6 +185,10 @@
             // Hide registration form
             document.getElementById('registrationForm').style.display = 'none';
 
+
+            document.getElementById('linkContainer').style.display = 'flex';
+
+
             // Show the profile page
             document.getElementById('profilePage').style.display = 'block';
 
@@ -170,21 +199,21 @@
             document.getElementById('registerUsername').value = '';
             document.getElementById('registerPassword').value = '';
 
-
             function displayProfilePicture() {
-            var profilePictureInput = document.getElementById('profilePicture');
-            var passportPhoto = document.getElementById('passportPhoto');
+    var profilePictureInput = document.getElementById('profilePictureInput');
+    var profilePicture = document.getElementById('profilePicture');
 
-            if (profilePictureInput.files && profilePictureInput.files[0]) {
-                var reader = new FileReader();
+    if (profilePictureInput.files && profilePictureInput.files[0]) {
+        var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    passportPhoto.src = e.target.result;
-                };
+        reader.onload = function (e) {
+            profilePicture.src = e.target.result;
+        };
 
-                reader.readAsDataURL(profilePictureInput.files[0]);
-            }
-        }
+        reader.readAsDataURL(profilePictureInput.files[0]);
+    }
+}
+           
 
             return false; // Prevent form submission
         }
