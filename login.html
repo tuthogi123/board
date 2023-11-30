@@ -85,9 +85,9 @@
         }
         .links-container {
             display: none;
-            justify-content: space-between; /* Align links horizontally with space between them */
-            border-top: 20px solid #ccc; /* Add top border */
-            padding: 10px 0; /* Add padding for better visual */
+            justify-content: space-between; 
+            border-top: 20px solid #ccc; 
+            padding: 10px 0; 
             margin-top: 20px;
             flex-direction:row ;
         }
@@ -95,9 +95,9 @@
         .links-container a {
             text-decoration: none;
             color: #333;
-            padding: 5px 10px; /* Add padding around each link */
-            border: 1px solid #ccc; /* Add border around each link */
-            border-radius: 5px; /* Add border-radius for rounded corners */
+            padding: 5px 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
             margin-bottom: 5px;
             margin-right: 5px;
         }
@@ -132,7 +132,7 @@
     <div class="profile-container" id="profilePage" style="display: none;">
         <h2>Welcome to your profile</h2>
         <div class="profile-section" id="profileNameSection">
-            <p>Name: John Doe</p>
+            <p>Name: </p>
         </div>
         <div class="profile-section">
             <div id="profilePictureContainer">
@@ -141,7 +141,7 @@
             </div>
         </div>
 
-        <!-- Display link container after registration -->
+     
         <div class="links-container" id="linkContainer" style="display: none;">
             <a class="link1" href="campx.html">Campx</a>
             <a class="link2" href="#">Fixer</a>
@@ -166,13 +166,13 @@
             var username = document.getElementById('loginUsername').value;
             var password = document.getElementById('loginPassword').value;
 
-            // Add authentication logic here (not secure, for demo purposes only)
+          
             if (username === 'demo' && password === 'demo') {
                 alert('Login successful!');
-                return false; // Prevent form submission
+                return false; 
             } else {
                 alert('Invalid username or password');
-                return false; // Prevent form submission
+                return false;
             }
         }
 
@@ -180,22 +180,22 @@
             var username = document.getElementById('registerUsername').value;
             var password = document.getElementById('registerPassword').value;
 
-            // Add registration logic here (not secure, for demo purposes only)
+         
             alert('Registration successful!');
-            // Hide registration form
+           
             document.getElementById('registrationForm').style.display = 'none';
 
 
             document.getElementById('linkContainer').style.display = 'flex';
 
 
-            // Show the profile page
+          
             document.getElementById('profilePage').style.display = 'block';
 
             document.getElementById('profileNameSection').innerHTML = '<p>Name: ' + username + '</p>';
 
 
-            // Reset the form
+            
             document.getElementById('registerUsername').value = '';
             document.getElementById('registerPassword').value = '';
 
@@ -215,7 +215,7 @@
 }
            
 
-            return false; // Prevent form submission
+            return true; 
         }
     </script>
 </body>

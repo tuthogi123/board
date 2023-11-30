@@ -114,12 +114,12 @@
     var selectedSection = document.getElementById('sectionSelect').value;
 
     if (selectedSection === 'partys') {
-        // Get party details from the form
+      
         var partyVenue = document.getElementById('partyVenue').value;
         var partyDate = document.getElementById('partyDate').value;
         var partyTime = document.getElementById('partyTime').value;
 
-        // Create a new party item
+      
         var partyContainer = document.querySelector('.party-container');
         var newPartyItem = document.createElement('div');
         newPartyItem.className = 'party-item';
@@ -133,12 +133,12 @@
             </div>
         `;
 
-        // Append the new party item to the party container
+      
         partyContainer.appendChild(newPartyItem);
 
         alert('File uploaded to Partys successfully!\nVenue: ' + partyVenue + '\nDate: ' + partyDate + '\nTime: ' + partyTime);
     }
-    // ... (handle other sections as needed)
+  
 
     return false;
 }

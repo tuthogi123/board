@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parties</title>
     <style>
-        /* Add your styles specific to the parties section here */
+      
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
 
-        /* Define your styles for the parties section */
         .party-container {
             padding: 20px;
             text-align: center;
@@ -40,14 +39,14 @@
             font-size: 16px;
         }
 
-        /* Add a style for the clickable link */
+    
         .party-link {
             text-decoration: none;
             color: #333;
             cursor: pointer;
         }
 
-        /* Style for the party details container */
+       
         #party-details-container {
             display: none;
             margin: 20px;
@@ -57,7 +56,7 @@
 
 <body>
     <div class="party-container" id="party-container">
-        <!-- Wrap each party item in a clickable link -->
+      
         <div class="party-item">
             <a href="party1.html" class="party-link" onclick="showPartyDetails(1)">
                 <img src="images/image6.jpg" alt="Party 1">
@@ -93,10 +92,10 @@
                 </div>
             </a>
         </div>
-        <!-- Add more party items as needed -->
+      
     </div>
 
-    <!-- Party Details Container -->
+
     <div id="party-details-container">
         <h2 id="party-name"></h2>
         <p id="party-date"></p>
@@ -106,7 +105,7 @@
 
     <script>
         function showPartyDetails(partyNumber) {
-            // Define party details
+          
             const partyDetails = [
                 { name: "Party 1", date: "January 15, 2023", time: "8:00 PM", venue: "Party Venue 1" },
                 { name: "Party 2", date: "February 10, 2023", time: "7:30 PM", venue: "Party Venue 2" },
@@ -114,16 +113,14 @@
                 { name: "Party 4", date: "March 22, 2023", time: "9:30 PM", venue: "Party Venue 4" }
             ];
 
-            // Get the selected party details
+          
             const selectedParty = partyDetails[partyNumber - 1];
 
-            // Update the party details container
+           
             document.getElementById("party-name").innerText = selectedParty.name;
             document.getElementById("party-date").innerText = "Date: " + selectedParty.date;
             document.getElementById("party-time").innerText = "Time: " + selectedParty.time;
             document.getElementById("party-venue").innerText = "Venue: " + selectedParty.venue;
-
-            // Show the party details container
             document.getElementById("party-details-container").style.display = "block";
         }
     </script>

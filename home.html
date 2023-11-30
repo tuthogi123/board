@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamburger Menu</title>
+    <title></title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: green;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
+            overflow-y: auto; 
         }
 
         .content {
@@ -20,43 +21,39 @@
         }
 
         .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
         }
-        
+
         .menu-toggle {
             cursor: pointer;
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1;
-            background-color:blue; /* Hamburger button background color */
+            background-color: blue; 
             color: white;
             padding: 10px 15px;
             border-radius: 5px;
         }
 
         .menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ccc;
-    z-index: 2;
-}
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 2;
+        }
 
-.menu.show-menu {
-    display: flex;
-}
-
+        .menu.show-menu {
+            display: flex;
+        }
 
         .menu-item {
             padding: 10px;
@@ -78,136 +75,94 @@
             }
         }
 
-      
         .links-container {
-    background-color: #fff;
-    padding: 10px;
-    display: flex;
-    flex-direction: row; /* Updated to arrange links horizontally */
-    align-items: center;
-    z-index: 1;
-    width: 100%; /* Adjusted width to take the full width of the screen */
-    justify-content: space-around; /* Adjusted to evenly space the links */
-}
+            display: flex;
+            flex-direction: row-reverse; 
+            align-items: center;
+            justify-content: flex-end; 
+            padding: 10px;
+            background-color: transparent; 
+        }
 
-.links-container a {
-    text-decoration: none;
-    color: #333; /* Preferred text color */
-    display: flex;
-    flex-direction: column; /* Make sure to apply flex-direction here as well */
-    /* align-items: center; Remove this line */
-    width: 100%; /* Add this line to make the link take full width */
-    margin-bottom: 10px;
-}
-
-.link-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-        .link-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
+        .links-container a {
+            text-decoration: none;
+            color: black;
+            display: inline-block; 
+            margin-left: 50px; 
         }
 
         .link-name {
             padding: 10px;
-    text-align: center;
-    background-color: #ddd; /* Preferred background color for the link name */
-    border-radius: 0 0 5px 5px;
-    width: 100%; /* Allow the link name to take full width */
-    box-sizing: border-box; /* Include padding and border in the width */
-        }
-
-        .footer h1 {
-            color: #ddd; /* Preferred color for the footer text */
-        }
-
-        .trending-item-text {
-            font-weight: bold;
-            font-size: 1.2em;
+            text-align: center;
+            background-color: transparent; 
+            border-radius: 0 0 5px 5px;
+            box-sizing: border-box;
         }
 
         .trending-list {
             display: flex;
-            justify-content: space-around;
-            width: 80%;
+            justify-content: flex-start; 
         }
 
         .trending-item {
-            width: 200px;
-            height: 200px;
-            background-size: cover;
-            margin: 0 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+            flex: 0 0 auto; 
+            margin: 0 10px; 
         }
-
         .trending-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
+    width: 100%;
+    height: 100px;
+    margin-right: 10px;
+}
+
+        .advertisement {
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px; 
+            white-space: nowrap; 
         }
 
-        .trending-section {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .advertisement img {
+            width: 300px; 
+            height: 150px; 
+            margin-right: 10px; 
+            animation: moveLeft 3s linear infinite; 
+        }
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
-        .trending-category {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
+        .you-may-like {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 10px;
+    display: flex; 
+    flex-wrap: wrap; 
+}
 
-        .events {
-            background-image: url('events.jpg');
-        }
+.you-may-like-item {
+    display: flex;
+    margin-bottom: 20px;
+    flex: 1 1 auto; 
+}
 
-        .sports {
-            background-image: url('sports.jpg');
-        }
+.you-may-like-item img {
+    width: 100px;
+    height: 75px;
+    margin-right: 10px;
+}
 
-        .jobs {
-            background-image: url('jobs.jpg');
-        }
-
-        .link1 {
-            background-image: url('images/image14 (1).jpg');
-        }
-
-        .link2 {
-            background-image: url('images/image2.jpg');
-        }
-
-        .link3 {
-            background-image: url('images/image3.jpg');
-        }
-
-        .link5 {
-            background-image: url('images/image5.jpg');
-        }
-
-        .link6 {
-            background-image: url('images/image6.jpg');
-        }
-
-      
+.you-may-like-description {
+    flex: 1;
+}
 
     </style>
-    
+
 </head>
 
 <body>
@@ -222,64 +177,116 @@
     <div class="links-container">
         <a class="link1" href="index.html">
             <div class="link-content">
-                <img src="images/image14 (2).jpg" alt="Link 1">
                 <div class="link-name">Campx</div>
             </div>
         </a>
         <a class="link2" href="fixer.html">
             <div class="link-content">
-                <img src="images/image2.jpg" alt="Link 2">
                 <div class="link-name">Fixer</div>
             </div>
         </a>
         <a class="link3" href="#">
             <div class="link-content">
-                <img src="images/image14 (1).jpg" alt="Link 3">
                 <div class="link-name">Studx</div>
             </div>
         </a>
         <a class="link5" href="#">
             <div class="link-content">
-                <img src="images/image6.jpg" alt="Link 5">
                 <div class="link-name">Rental</div>
             </div>
         </a>
         <a class="link6" href="#">
             <div class="link-content">
-                <img src="images/image5.jpg" alt="Link 6">
                 <div class="link-name">Uncleeeas</div>
             </div>
         </a>
     </div>
 
+
+    <h>Advertisement</h>
+    <div class="advertisement">
+        <img src="images/image1.jpg" alt="Advertisement Image 1">
+        <img src="images/image2.jpg" alt="Advertisement Image 2">
+        <img src="images/image3.jpg" alt="Advertisement Image 3">
+        <img src="images/image4.jpg" alt="Advertisement Image 4">
+        <img src="images/image5.jpg" alt="Advertisement Image 5">
+    
+    
+    </div>
     <div class="footer">
         <h1>Trending</h1>
         <div class="trending-list">
             <div class="trending-item events">
-                <img src="images/image1.jpg" alt="Events Image">
-                <a href="index.html">
-                    <div class="trending-item-text">Events</div>
-                </a>
+                <img src="images/trending1.jpeg" alt="Events Image">
+                <!-- <a href="index.html"> -->
+                    <div class="trending-item-text"></div>
+                    <p>Python tutor needed with<br> 1or more years<br>
+                         experience and with more
+                         <br> than 5 complete <br> python project
+
+                        @10000ksh per month
+                        </p>
+                    <p>   Book now</p>
+                <!-- </a> -->
             </div>
             <div class="trending-item sports">
-                <img src="images/image2.jpg" alt="Sports Image">
-            </div>
-            
-            <div class="trending-item Entertainment">
-                <img src="images/image5.jpg" alt="Entertainment Image">
-                <div class="trending-item-text">Entertainment</div>
-            </div>
-       
+                <img src="images/trending2.jpeg" alt="Sports Image">
+                <div class="trending-item-text"></div>
+                <p>Java tutor needed with one
+                    <br> or more years experience and with  <br>
+                    atleast 5 or more complete java project <br>
+                    @10000ksh per month </p>
+                <p> Book now</p>
 
+            </div>
+            <div class="trending-item Entertainment">
+                <img src="images/trending3.jpeg" alt="Entertainment Image">
+                <div class="trending-item-text"></div>
+                <p> Unclog kitchen sink <br>
+
+                    @150ksh</p>
+                <p> Book now</p>
+            </div>
+
+        </div>
+    </div>
+
+    <h1>You may like this </h1>
+    <div class="you-may-like">
+        <div class="you-may-like-title"></div>
+        <div class="you-may-like-item">
+            <img src="images/image.jpg" alt="You May Like Image 1">
+            <div class="you-may-like-description">
+                <p>Description 1</p>
+                <p>About 1</p>
+            </div>
+        </div>
+        <div class="you-may-like-item">
+            <img src="images/image1.jpg" alt="You May Like Image 2">
+            <div class="you-may-like-description">
+                <p>Description 2</p>
+                <p>About 2</p>
+            </div>
+        </div>
+
+    </div>
+
+
+   
 
     <script>
-       
-        var menu = document.querySelector('.menu');
-        menu.classList.toggle('show-menu');
-
-</script>
-
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show-menu');
+            console.log('Toggle menu clicked');
+        }
+    </script>
+    <div class="footer">
+        <p>Copyright © 2023 tuthogi programming school.All Rights Reserved. 
+        
+      </div>
 
 </body>
+
 
 </html>
