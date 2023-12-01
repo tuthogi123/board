@@ -72,6 +72,7 @@
             .menu {
                 width: 100%;
                 top: 80px;
+                right: 0;
             }
         }
 
@@ -102,6 +103,7 @@
         .trending-list {
             display: flex;
             justify-content: flex-start; 
+            
         }
 
         .trending-item {
@@ -123,7 +125,7 @@
 
         .advertisement img {
             width: 300px; 
-            height: 150px; 
+            height: 200px; 
             margin-right: 10px; 
             animation: moveLeft 3s linear infinite; 
         }
@@ -152,13 +154,39 @@
 }
 
 .you-may-like-item img {
-    width: 100px;
-    height: 75px;
+    width: 200px;
+    height: 150px;
     margin-right: 10px;
 }
 
 .you-may-like-description {
     flex: 1;
+}
+
+.links-container a {
+        margin-left: 20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}.links-container a {
+        margin-left: 20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
     </style>
@@ -205,11 +233,13 @@
 
     <h>Advertisement</h>
     <div class="advertisement">
-        <img src="images/image1.jpg" alt="Advertisement Image 1">
-        <img src="images/image2.jpg" alt="Advertisement Image 2">
-        <img src="images/image3.jpg" alt="Advertisement Image 3">
-        <img src="images/image4.jpg" alt="Advertisement Image 4">
-        <img src="images/image5.jpg" alt="Advertisement Image 5">
+        <img src="images/advertisement1.jpeg" alt="Advertisement Image 1">
+        <img src="images/advertisement2.jpeg" alt="Advertisement Image 2">
+        <img src="images/advertisement3.jpeg" alt="Advertisement Image 3">
+        <img src="images/advertisement4.jpeg" alt="Advertisement Image 4">
+        <img src="images/advertisement5.jpeg" alt="Advertisement Image 5">
+        <img src="images/advertisement6.jpeg" alt="Advertisement Image 5">
+    
     
     
     </div>
@@ -255,18 +285,30 @@
     <div class="you-may-like">
         <div class="you-may-like-title"></div>
         <div class="you-may-like-item">
-            <img src="images/image.jpg" alt="You May Like Image 1">
+            <img src="images/table.jpeg" alt="You May Like Image 1">
             <div class="you-may-like-description">
-                <p>Description 1</p>
-                <p>About 1</p>
+                <p>Study table
+                    @ 700ksh
+                           </p>
+                <p>Buy now</p>
             </div>
         </div>
         <div class="you-may-like-item">
-            <img src="images/image1.jpg" alt="You May Like Image 2">
+            <img src="images/gas.jpeg" alt="You May Like Image 2">
             <div class="you-may-like-description">
-                <p>Description 2</p>
-                <p>About 2</p>
+                <p>6kg gas cylinder
+                    @ 1500ksh 
+                           </p>
+                <p>Buy now</p>
             </div>
+            <div class="you-may-like-item">
+                <img src="images/plastic.jpeg" alt="You May Like Image 2">
+                <div class="you-may-like-description">
+                    <p>Plastic chair
+                        @400sh
+                               </p>
+                    <p>Buy now</p>
+                </div>
         </div>
 
     </div>
